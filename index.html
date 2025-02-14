@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Michael Malgapo</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        body {
+            background-color: black;
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 1);
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #ffd700;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 5%;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                       url('https://images.unsplash.com/photo-1533134486753-c833f0ed4866?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero h1 span {
+            color: #ffd700;
+        }
+
+        .hero p {
+            max-width: 600px;
+            margin-bottom: 2rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            color: #fff;
+            font-size: 1.5rem;
+        }
+
+        /* About Section */
+        .about {
+            padding: 5rem 5%;
+        }
+
+        .section-title {
+            color: #ffd700;
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2rem;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .profile-img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .about-info h2 {
+            margin-bottom: 1rem;
+        }
+
+        .about-details {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .about-details dt {
+            color: #ffd700;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 5rem 5%;
+            background-color: rgba(0, 0, 0, 1);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .service-card i {
+            font-size: 2.5rem;
+            color: #ffd700;
+            margin-bottom: 1rem;
+        }
+
+        /* Skills Section */
+        .skills {
+            padding: 5rem 5%;
+        }
+
+        .skills-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .skill-bar {
+            margin-bottom: 1.5rem;
+        }
+
+        .skill-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+
+        .progress-bar {
+            height: 10px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .progress {
+            height: 100%;
+            background-color: #ffd700;
+            transition: width 1s ease-in-out;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-img {
+                max-width: 300px;
+                margin: 0 auto;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+
+        .download-cv {
+            display: inline-block;
+            background-color: #ffd700;
+            color: #0a192f;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">MMM</div>
+        <div class="nav-links">
+            <a href="#home">HOME</a>
+            <a href="#about">ABOUT</a>
+            <a href="#services">SERVICES</a>
+            <a href="#skills">SKILLS</a>
+        </div>
+    </nav>
+
+    <section class="hero" id="home">
+        <h1>Hi, I am <span>Michael Malgapo</span></h1>
+        <p>I am a Android and Desktop developer. Creating projects for fun.</p>
+        <div class="social-links">
+            <a href="https://www.facebook.com/michael.malgapo.54/" target="_blank" rel="noopener noreferrer" data-tooltip="Facebook">
+                <i class="fab fa-facebook"></i>
+            </a>
+            <a href="https://x.com/MalgapoMarc" target="_blank" rel="noopener noreferrer" data-tooltip="Twitter">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://github.com/HrLuna" target="_blank" rel="noopener noreferrer" data-tooltip="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <h2 class="section-title">ABOUT ME</h2>
+        <div class="about-content">
+            <img src="assetss/picture.jpg" alt="Profile" class="profile-img">
+            <div class="about-info">
+                <h2>Hi There! I'm Michael Malgapo</h2>
+                <h3>Developer</h3>
+                <p>I am a IT developer with passion on developing android and desktop applications with experience working on back-end development.</p>
+                <dl class="about-details">
+                    <dt>Birthday</dt>
+                    <dd>May 22, 2002</dd>
+                    <dt>Phone</dt>
+                    <dd>+63 916 926 1185</dd>
+                    <dt>Email</dt>
+                    <dd>malgapomichaelmarc@gmail.com</dd>
+                    <dt>From</dt>
+                    <dd>Malabon City, Manila, Philippines</dd>
+                    <dt>Language</dt>
+                    <dd>Tagalog, English</dd>
+                    <dt>Freelance</dt>
+                    <dd>Available</dd>
+                </dl>
+                <a href="#" class="download-cv">Download CV</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <h2 class="section-title">SERVICES</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fas fa-desktop"></i>
+                <h3>UI/UX Design</h3>
+                <p>Crafting intuitive and visually appealing user interfaces that enhance user experience through seamless navigation and accessibility.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-mobile-alt"></i>
+                <h3>App Design</h3>
+                <p>Designing engaging and functional mobile applications with a focus on usability, aesthetics, and responsive layouts.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-laptop-code"></i>
+                <h3>Desktop Design</h3>
+                <p>Developing sleek and efficient desktop applications with user-friendly interfaces optimized for productivity and performance.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="skills" id="skills">
+        <h2 class="section-title">MY SKILLS</h2>
+        <div class="skills-content">
+            <div class="skill-bar">
+                <div class="skill-info">
+                    <span>Java</span>
+                    <span>80%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 80%"></div>
+                </div>
+            </div>
+            <div class="skill-bar">
+                <div class="skill-info">
+                    <span>C#</span>
+                    <span>75%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 75%"></div>
+                </div>
+            </div>
+            <div class="skill-bar">
+                <div class="skill-info">
+                    <span>MySQL</span>
+                    <span>70%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 70%"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Animate skill bars on scroll
+        const skillSection = document.querySelector('.skills');
+        const progressBars = document.querySelectorAll('.progress');
+
+        function showProgress() {
+            progressBars.forEach(progress => {
+                const value = progress.getAttribute('data-value');
+                progress.style.opacity = 1;
+                progress.style.width = `${value}%`;
+            });
+        }
+
+        window.addEventListener('scroll', () => {
+            const sectionPos = skillSection.getBoundingClientRect().top;
+            const screenPos = window.innerHeight;
+
+            if(sectionPos < screenPos) {
+                showProgress();
+            }
+        });
+    </script>
+</body>
+</html>
