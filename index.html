@@ -112,8 +112,15 @@
             border-radius: 10px;
         }
 
-        .about-info h2 {
-            margin-bottom: 1rem;
+        .about-info {
+            display: grid;
+            grid-template-columns: 1fr 250px;
+            gap: 2rem;
+            align-items: start;
+        }
+
+        .personal-details {
+            flex: 1;
         }
 
         .about-details {
@@ -125,6 +132,49 @@
 
         .about-details dt {
             color: #ffd700;
+        }
+
+        /* Tech Stack */
+        .tech-stack {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 10px;
+            height: fit-content;
+        }
+
+        .tech-stack h3 {
+            color: #ffd700;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            text-align: center;
+        }
+
+        .tech-icons {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .icon-container {
+            text-align: center;
+            padding: 0.5rem;
+        }
+
+        .icon-container img {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 0.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .icon-container:hover img {
+            transform: scale(1.1);
+        }
+
+        .icon-container span {
+            display: block;
+            font-size: 0.8rem;
+            color: #fff;
         }
 
         /* Services Section */
@@ -187,9 +237,24 @@
             transition: width 1s ease-in-out;
         }
 
+        .download-cv {
+            display: inline-block;
+            background-color: #ffd700;
+            color: #0a192f;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 1rem;
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
             .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .about-info {
                 grid-template-columns: 1fr;
             }
 
@@ -201,17 +266,14 @@
             .nav-links {
                 display: none;
             }
-        }
 
-        .download-cv {
-            display: inline-block;
-            background-color: #ffd700;
-            color: #0a192f;
-            padding: 0.8rem 1.5rem;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            margin-top: 1rem;
+            .tech-stack {
+                margin-top: 2rem;
+            }
+
+            .tech-icons {
+                grid-template-columns: repeat(3, 1fr);
+            }
         }
     </style>
 </head>
@@ -247,24 +309,52 @@
         <div class="about-content">
             <img src="assetss/picture.jpg" alt="Profile" class="profile-img">
             <div class="about-info">
-                <h2>Hi There! I'm Michael Malgapo</h2>
-                <h3>Developer</h3>
-                <p>I am a IT developer with passion on developing android and desktop applications with experience working on back-end development.</p>
-                <dl class="about-details">
-                    <dt>Birthday</dt>
-                    <dd>May 22, 2002</dd>
-                    <dt>Phone</dt>
-                    <dd>+63 916 926 1185</dd>
-                    <dt>Email</dt>
-                    <dd>malgapomichaelmarc@gmail.com</dd>
-                    <dt>From</dt>
-                    <dd>Malabon City, Manila, Philippines</dd>
-                    <dt>Language</dt>
-                    <dd>Tagalog, English</dd>
-                    <dt>Freelance</dt>
-                    <dd>Available</dd>
-                </dl>
-                <a href="#" class="download-cv">Download CV</a>
+                <div class="personal-details">
+                    <h2>Hi There! I'm Michael Malgapo</h2>
+                    <h3>Developer</h3>
+                    <p>I am a IT developer with passion on developing android and desktop applications with experience working on back-end development.</p>
+                    <dl class="about-details">
+                        <dt>Birthday</dt>
+                        <dd>May 22, 2002</dd>
+                        <dt>Phone</dt>
+                        <dd>+63 916 926 1185</dd>
+                        <dt>Email</dt>
+                        <dd>malgapomichaelmarc@gmail.com</dd>
+                        <dt>From</dt>
+                        <dd>Malabon City, Manila, Philippines</dd>
+                        <dt>Language</dt>
+                        <dd>Tagalog, English</dd>
+                        <dt>Freelance</dt>
+                        <dd>Available</dd>
+                    </dl>
+                    <a href="#" class="download-cv">Download CV</a>
+                </div>
+
+                <div class="tech-stack">
+                    <h3>Tech Stack</h3>
+                    <div class="tech-icons">
+                        <div class="icon-container">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java">
+                            <span>Java</span>
+                        </div>
+                        <div class="icon-container">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt="C#">
+                            <span>C#</span>
+                        </div>
+                        <div class="icon-container">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5">
+                            <span>HTML5</span>
+                        </div>
+                        <div class="icon-container">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3">
+                            <span>CSS3</span>
+                        </div>
+                        <div class="icon-container">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL">
+                            <span>MySQL</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -354,6 +444,39 @@
                 showProgress();
             }
         });
+
+        async function downloadCV() {
+            try {
+                const response = await fetch('assetss/Michael_Malgapo_CV.pdf');
+                if (!response.ok) {
+                    throw new Error('File not found');
+                }
+    
+                const blob = await response.blob();
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = "Michael_Malgapo_CV.pdf";
+                document.body.appendChild(a);
+                a.click();
+                window.URL.revokeObjectURL(url);
+                document.body.removeChild(a);
+    
+                // Show success message
+                const button = document.querySelector('.download-cv');
+                const originalText = button.innerHTML;
+                button.innerHTML = '<i class="fas fa-check"></i> Downloaded!';
+                
+                setTimeout(() => {
+                    button.innerHTML = originalText;
+                }, 2000);
+    
+            } catch (error) {
+                alert('Could not download CV. Please try again later.');
+                console.error('Download failed:', error);
+            }
+        }
+
     </script>
 </body>
 </html>
