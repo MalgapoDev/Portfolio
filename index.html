@@ -3,279 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Michael Malgapo</title>
+    <title>Michael Malgapo | Portfolio</title>
+    <link rel="icon" type="image/png" href="assetss/logo.png">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-        }
-
-        body {
-            background-color: black;
-            color: #fff;
-            line-height: 1.6;
-        }
-
-        /* Navigation */
-        nav {
-            padding: 1rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: fixed;
-            width: 100%;
-            background-color: rgba(0, 0, 0, 1);
-            z-index: 1000;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #ffd700;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 0.9rem;
-        }
-
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 5%;
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-                       url('https://images.unsplash.com/photo-1533134486753-c833f0ed4866?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
-            background-size: cover;
-            background-position: center;
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .hero h1 span {
-            color: #ffd700;
-        }
-
-        .hero p {
-            max-width: 600px;
-            margin-bottom: 2rem;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .social-links a {
-            color: #fff;
-            font-size: 1.5rem;
-        }
-
-        /* About Section */
-        .about {
-            padding: 5rem 5%;
-        }
-
-        .section-title {
-            color: #ffd700;
-            text-align: center;
-            margin-bottom: 3rem;
-            font-size: 2rem;
-        }
-
-        .about-content {
-            display: grid;
-            grid-template-columns: 300px 1fr;
-            gap: 3rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .profile-img {
-            width: 100%;
-            border-radius: 10px;
-        }
-
-        .about-info {
-            display: grid;
-            grid-template-columns: 1fr 250px;
-            gap: 2rem;
-            align-items: start;
-        }
-
-        .personal-details {
-            flex: 1;
-        }
-
-        .about-details {
-            display: grid;
-            grid-template-columns: auto 1fr;
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-
-        .about-details dt {
-            color: #ffd700;
-        }
-
-        /* Tech Stack */
-        .tech-stack {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 1.5rem;
-            border-radius: 10px;
-            height: fit-content;
-        }
-
-        .tech-stack h3 {
-            color: #ffd700;
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
-            text-align: center;
-        }
-
-        .tech-icons {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-        }
-
-        .icon-container {
-            text-align: center;
-            padding: 0.5rem;
-        }
-
-        .icon-container img {
-            width: 40px;
-            height: 40px;
-            margin-bottom: 0.5rem;
-            transition: transform 0.3s ease;
-        }
-
-        .icon-container:hover img {
-            transform: scale(1.1);
-        }
-
-        .icon-container span {
-            display: block;
-            font-size: 0.8rem;
-            color: #fff;
-        }
-
-        /* Services Section */
-        .services {
-            padding: 5rem 5%;
-            background-color: rgba(0, 0, 0, 1);
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .service-card {
-            background-color: rgba(255, 255, 255, 0.05);
-            padding: 2rem;
-            border-radius: 10px;
-            text-align: center;
-        }
-
-        .service-card i {
-            font-size: 2.5rem;
-            color: #ffd700;
-            margin-bottom: 1rem;
-        }
-
-        /* Skills Section */
-        .skills {
-            padding: 5rem 5%;
-        }
-
-        .skills-content {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .skill-bar {
-            margin-bottom: 1.5rem;
-        }
-
-        .skill-info {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 0.5rem;
-        }
-
-        .progress-bar {
-            height: 10px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 5px;
-            overflow: hidden;
-        }
-
-        .progress {
-            height: 100%;
-            background-color: #ffd700;
-            transition: width 1s ease-in-out;
-        }
-
-        .download-cv {
-            display: inline-block;
-            background-color: #ffd700;
-            color: #0a192f;
-            padding: 0.8rem 1.5rem;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            margin-top: 1rem;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .about-content {
-                grid-template-columns: 1fr;
-            }
-
-            .about-info {
-                grid-template-columns: 1fr;
-            }
-
-            .profile-img {
-                max-width: 300px;
-                margin: 0 auto;
-            }
-
-            .nav-links {
-                display: none;
-            }
-
-            .tech-stack {
-                margin-top: 2rem;
-            }
-
-            .tech-icons {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <nav>
@@ -285,6 +16,7 @@
             <a href="#about">ABOUT</a>
             <a href="#services">SERVICES</a>
             <a href="#skills">SKILLS</a>
+            <a href="#projects">PROJECTS</a>
         </div>
     </nav>
 
@@ -327,7 +59,6 @@
                         <dt>Freelance</dt>
                         <dd>Available</dd>
                     </dl>
-                    <a href="#" class="download-cv">Download CV</a>
                 </div>
 
                 <div class="tech-stack">
@@ -417,70 +148,88 @@
         </div>
     </section>
 
-    <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
+    <section class="projects" id="projects">
+        <h2 class="section-title">PROJECTS</h2>
+        <div class="project-container">
+            <div class="project-card">
+                <div class="project-images">
+                    <img src="assetss/app.jpg" alt="ACCAPP Screenshot">
+                </div>
+                <div class="project-info">
+                    <h3>ACCAPP: ACADEMIC CONCERN AND CONSULTATION SCHEDULING APP</h3>
+                    <p class="project-type">Project Type: Capstone/Thesis</p>
+                    <div class="project-meta">
+                        <span class="project-date">
+                            <i class="far fa-clock"></i>
+                            March 2024 - November 2024
+                        </span>
+                        <div class="project-platforms">
+                            <i class="fas fa-mobile-alt"></i>
+                            <i class="fas fa-desktop"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <div class="project-images">
+                    <img src="assetss/ae.png" alt="ACCAPP Screenshot">
+                </div>
+                <div class="project-info">
+                    <h3>AETHER STUDY: Personal Academic Planner</h3>
+                    <p class="project-type">Project Type: Personal Project</p>
+                    <div class="project-meta">
+                        <span class="project-date">
+                            <i class="far fa-clock"></i>
+                            June 2024
+                        </span>
+                        <div class="project-platforms">
+                            <i class="fas fa-desktop"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-        // Animate skill bars on scroll
-        const skillSection = document.querySelector('.skills');
-        const progressBars = document.querySelectorAll('.progress');
+            <div class="project-card">
+                <div class="project-images">
+                    <img src="assetss/rev.png" alt="ACCAPP Screenshot">
+                </div>
+                <div class="project-info">
+                    <h3>REVIT: Customer Survey and Feedback</h3>
+                    <p class="project-type">Project Type: Academic</p>
+                    <div class="project-meta">
+                        <span class="project-date">
+                            <i class="far fa-clock"></i>
+                            June 2024
+                        </span>
+                        <div class="project-platforms">
+                            <i class="fas fa-desktop"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-        function showProgress() {
-            progressBars.forEach(progress => {
-                const value = progress.getAttribute('data-value');
-                progress.style.opacity = 1;
-                progress.style.width = `${value}%`;
-            });
-        }
-
-        window.addEventListener('scroll', () => {
-            const sectionPos = skillSection.getBoundingClientRect().top;
-            const screenPos = window.innerHeight;
-
-            if(sectionPos < screenPos) {
-                showProgress();
-            }
-        });
-
-        async function downloadCV() {
-            try {
-                const response = await fetch('assetss/Michael_Malgapo_CV.pdf');
-                if (!response.ok) {
-                    throw new Error('File not found');
-                }
+            <div class="project-card">
+                <div class="project-images">
+                    <img src="assetss/reservac.png" alt="ACCAPP Screenshot">
+                </div>
+                <div class="project-info">
+                    <h3>RESERVAC: Covid Vacinnation Reservation System</h3>
+                    <p class="project-type">Project Type: Academic</p>
+                    <div class="project-meta">
+                        <span class="project-date">
+                            <i class="far fa-clock"></i>
+                            June 2024
+                        </span>
+                        <div class="project-platforms">
+                            <i class="fas fa-desktop"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     
-                const blob = await response.blob();
-                const url = window.URL.createObjectURL(blob);
-                const a = document.createElement('a');
-                a.href = url;
-                a.download = "Michael_Malgapo_CV.pdf";
-                document.body.appendChild(a);
-                a.click();
-                window.URL.revokeObjectURL(url);
-                document.body.removeChild(a);
-    
-                // Show success message
-                const button = document.querySelector('.download-cv');
-                const originalText = button.innerHTML;
-                button.innerHTML = '<i class="fas fa-check"></i> Downloaded!';
-                
-                setTimeout(() => {
-                    button.innerHTML = originalText;
-                }, 2000);
-    
-            } catch (error) {
-                alert('Could not download CV. Please try again later.');
-                console.error('Download failed:', error);
-            }
-        }
-
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
