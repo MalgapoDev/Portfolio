@@ -196,39 +196,6 @@ nav {
     margin-bottom: 1rem;
 }
 
-/* Skills Section */
-.skills {
-    padding: 5rem 5%;
-}
-
-.skills-content {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.skill-bar {
-    margin-bottom: 1.5rem;
-}
-
-.skill-info {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 0.5rem;
-}
-
-.progress-bar {
-    height: 10px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 5px;
-    overflow: hidden;
-}
-
-.progress {
-    height: 100%;
-    background-color: #ffd700;
-    transition: width 1s ease-in-out;
-}
-
 .projects {
     padding: 5rem 5%;
     background-color: rgba(0, 0, 0, 1);
