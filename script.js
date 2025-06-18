@@ -18,12 +18,3 @@ function showProgress() {
         progress.style.width = `${value}%`;
     });
 }
-
-window.addEventListener('scroll', () => {
-    const sectionPos = skillSection.getBoundingClientRect().top;
-    const screenPos = window.innerHeight;
-
-    if(sectionPos < screenPos) {
-        showProgress();
-    }
-});
